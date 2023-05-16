@@ -1,6 +1,7 @@
 # Requisito 1
 def fetch(url):
     """Seu código deve vir aqui"""
+    print('')
 
 
 # Requisito 2
@@ -21,3 +22,6 @@ def scrape_news(html_content):
 # Requisito 5
 def get_tech_news(amount):
     """Seu código deve vir aqui"""
+
+
+fetch('a')
