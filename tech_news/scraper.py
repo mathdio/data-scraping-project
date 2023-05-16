@@ -1,6 +1,7 @@
 import requests
 from parsel import Selector
 import time
+from .database import create_news
 
 # Requisito 1
 
@@ -68,10 +69,28 @@ def scrape_news(html_content):
 
 # Requisito 5
 def get_tech_news(amount):
-    """Seu código deve vir aqui"""
+    updated_amount = amount
+    url = "https://blog.betrybe.com/"
+    all_news_list = []
+    while updated_amount > 0:
+        html_content = fetch(url)
+        news_list = scrape_updates(html_content)
+
+        for link in news_list:
+            html_news = fetch(link)
+            news_info = scrape_news(html_news)
+            all_news_list.append(news_info)
+            updated_amount -= 1
+            if updated_amount == 0:
+                break
+        if updated_amount > 0:
+            url = scrape_next_page_link(html_content)
+    create_news(all_news_list)
+    return all_news_list
 
 
-html = fetch(
-    "https://blog.betrybe.com/carreira/empowerment-lideranca-o-que-e/"
-)
-print(scrape_news(html))
+# html = fetch(
+#     "https://blog.betrybe.com/carreira/empowerment-lideranca-o-que-e/"
+# )
+# print(scrape_news(html))
+print(get_tech_news(1))
