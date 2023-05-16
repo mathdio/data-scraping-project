@@ -93,4 +93,4 @@ def get_tech_news(amount):
 #     "https://blog.betrybe.com/carreira/empowerment-lideranca-o-que-e/"
 # )
 # print(scrape_news(html))
-print(get_tech_news(1))
+# print(get_tech_news(1))

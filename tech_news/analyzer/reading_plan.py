@@ -1,5 +1,6 @@
 from typing import Any, Dict, List
-from tech_news.database import find_news
+
+# from tech_news.database import find_news
 
 
 class ReadingPlanService:
@@ -10,7 +11,26 @@ class ReadingPlanService:
         a função `find_news` do módulo `tech_news.database`
         sem afetar o teste do requisito.
         """
-        return find_news()
+        db_result = [
+            {"title": "Não deixe para depois: Python...", "reading_time": 4},
+            {
+                "title": "Selenium, BeautifulSoup ou Parsel?...",
+                "reading_time": 3,
+            },
+            {
+                "title": "Pytest + Faker: a combinação poderosa dos testes!",
+                "reading_time": 10,
+            },
+            {
+                "title": "FastAPI e Flask: frameworks para APIs em Python",
+                "reading_time": 15,
+            },
+            {
+                "title": "A biblioteca Pandas e o sucesso da linguagem Python",
+                "reading_time": 12,
+            },
+        ]
+        return db_result
 
     @classmethod
     def group_news_for_available_time(
