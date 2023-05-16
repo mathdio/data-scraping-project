@@ -1,7 +1,7 @@
 import requests
 from parsel import Selector
 import time
-from .database import create_news
+from tech_news.database import create_news
 
 # Requisito 1
 
@@ -93,4 +93,4 @@ def get_tech_news(amount):
 #     "https://blog.betrybe.com/carreira/empowerment-lideranca-o-que-e/"
 # )
 # print(scrape_news(html))
-# print(get_tech_news(1))
+print(get_tech_news(1))
