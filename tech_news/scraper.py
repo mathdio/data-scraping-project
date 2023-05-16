@@ -40,7 +40,30 @@ def scrape_next_page_link(html_content):
 
 # Requisito 4
 def scrape_news(html_content):
-    """Seu código deve vir aqui"""
+    news_info = {}
+    selector = Selector(text=html_content)
+
+    url = selector.css('link[rel="canonical"]::attr(href)').get()
+    news_info["url"] = url
+
+    title = selector.css("h1.entry-title::text").get()
+    news_info["title"] = title.strip()
+
+    timestamp = selector.css(".meta-date::text").get()
+    news_info["timestamp"] = timestamp
+
+    writer = selector.css(".author a::text").get()
+    news_info["writer"] = writer
+
+    reading_time = selector.css(".meta-reading-time::text").re_first(r"\d+")
+    news_info["reading_time"] = int(reading_time)
+
+    summary = selector.css(".entry-content > p:first-of-type *::text").getall()
+    news_info["summary"] = "".join(summary).strip()
+
+    category = selector.css(".label::text").get()
+    news_info["category"] = category
+    return news_info
 
 
 # Requisito 5
@@ -48,5 +71,7 @@ def get_tech_news(amount):
     """Seu código deve vir aqui"""
 
 
-html = fetch("https://blog.betrybe.com")
-print(scrape_next_page_link(html))
+html = fetch(
+    "https://blog.betrybe.com/carreira/empowerment-lideranca-o-que-e/"
+)
+print(scrape_news(html))
