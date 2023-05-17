@@ -6,10 +6,10 @@ from datetime import datetime
 
 
 def search_by_title(title):
-    filtered = []
-    result = search_news({"title": re.compile(title, re.IGNORECASE)})
-    for news in result:
-        filtered.append((news["title"], news["url"]))
+    filtered = [
+        (news["title"], news["url"])
+        for news in search_news({"title": re.compile(title, re.IGNORECASE)})
+    ]
     return filtered
 
 
