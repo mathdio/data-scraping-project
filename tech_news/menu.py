@@ -21,30 +21,19 @@ def analyzer_menu():
         " 5 - Sair.\n"
     )
     features = {
-        "0": "Digite quantas notícias serão buscadas: ",
-        "1": "Digite o título: ",
-        "2": "Digite a data normato aaaa-mm-dd: ",
-        "3": "Digite a categoria: ",
+        "0": lambda: get_tech_news(
+            int(input("Digite quantas notícias serão buscadas: "))
+        ),
+        "1": lambda: search_by_title(input("Digite o título: ")),
+        "2": lambda: search_by_date(
+            input("Digite a data normato aaaa-mm-dd: ")
+        ),
+        "3": lambda: search_by_category(input("Digite a categoria: ")),
+        "4": lambda: top_5_categories(),
+        "5": lambda: print("Encerrando script\n"),
     }
 
-    if option in ["0", "1", "2", "3"]:
-        entry = input(features[option])
-        features_functions(option, entry)
-
-    elif option == "4":
-        print(top_5_categories())
-    elif option == "5":
-        print("Encerrando script\n")
-    else:
+    try:
+        return features[option]()
+    except KeyError:
         sys.stderr.write("Opção inválida\n")
-
-
-def features_functions(option, entry):
-    if option == "0":
-        print(get_tech_news(int(entry)))
-    elif option == "1":
-        print(search_by_title(entry))
-    elif option == "2":
-        print(search_by_date(entry))
-    elif option == "3":
-        print(search_by_category(entry))
