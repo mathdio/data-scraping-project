@@ -35,6 +35,3 @@ def search_by_category(category):
         )
     ]
     return filtered
-
-
-print(search_by_category("erra"))

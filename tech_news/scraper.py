@@ -87,10 +87,3 @@ def get_tech_news(amount):
             url = scrape_next_page_link(html_content)
     create_news(all_news_list)
     return all_news_list
-
-
-# html = fetch(
-#     "https://blog.betrybe.com/carreira/empowerment-lideranca-o-que-e/"
-# )
-# print(scrape_news(html))
-print(get_tech_news(1))
