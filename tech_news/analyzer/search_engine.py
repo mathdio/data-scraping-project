@@ -28,12 +28,13 @@ def search_by_date(date):
 
 # Requisito 9
 def search_by_category(category):
-    """Seu código deve vir aqui"""
+    filtered = [
+        (news["title"], news["url"])
+        for news in search_news(
+            {"category": re.compile(f"^{category}$", re.IGNORECASE)}
+        )
+    ]
+    return filtered
 
 
-# print(search_by_title("site responsivo:"))
-# print(search_by_date("2023-05-10"))
-
-date = "2023-05-17"
-valid_date = datetime.strptime(date, "%Y-%m-%d").strftime("%d/%m/%Y")
-print(valid_date)
+print(search_by_category("erra"))
