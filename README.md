@@ -9,6 +9,7 @@ developed as a [Trybe](https://www.betrybe.com) Project.
 Some files may have been provided by [Trybe](https://www.betrybe.com) to accelerate the application development start.
 
 ## 🛠️ Built with
+<a href="https://www.mongodb.com/docs/" target="_blank" rel="noreferrer"><img src="https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white" alt="MongoDB" /></a>
 <a href="https://docs.python.org/3/" target="_blank" rel="noreferrer"><img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" /></a>
 
 ## 🎯 Used skills
