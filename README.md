@@ -3,9 +3,11 @@
 > Although this README has some solid guidance, more info is yet to be added. The "About this project" section is incomplete, for example.
 
 # ✂️ Data Scraping
-developed as a [Trybe](https://www.betrybe.com) Project.
+A tech news database seeded through data scraping, developed as a [Trybe](https://www.betrybe.com) Project.
 
 ## 💻 About this project
+This project is a feature to data scraping [Trybe Blog](https://blog.betrybe.com) for tech news. The modules allow users to: import or scrape news, export it, do searches and analysis in collected news.
+
 Some files may have been provided by [Trybe](https://www.betrybe.com) to accelerate the application development start.
 
 ## 🛠️ Built with
