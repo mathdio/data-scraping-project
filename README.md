@@ -1,14 +1,10 @@
-> # :construction: This README is still under construction! :construction:
->
-> Although this README has some solid guidance, more info is yet to be added. The "About this project" section is incomplete, for example.
-
 # ✂️ Data Scraping
 A tech news database seeded through data scraping, developed as a [Trybe](https://www.betrybe.com) Project.
 
 ## 💻 About this project
 This project is a feature to data scraping [Trybe Blog](https://blog.betrybe.com) for tech news. The modules allow users to: import or scrape news, export it, do searches and analysis in collected news.
 
-Some files may have been provided by [Trybe](https://www.betrybe.com) to accelerate the application development start.
+Some files may have been provided by [Trybe](https://www.betrybe.com) to accelerate the application development start and in order to be tested, as `./tech_news/analyzer/reading_plan.py` file.
 
 ## 🛠️ Built with
 <a href="https://www.mongodb.com/docs/" target="_blank" rel="noreferrer"><img src="https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white" alt="MongoDB" /></a>
